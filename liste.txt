@@ -4,8 +4,8 @@
 # Erlaubt sind plakat01 bis plakat20 (Dateien plakat01.jpg … plakat20.jpg).
 # Nach jeder Änderung die Zahl bei 'stand' um 1 erhöhen.
 
-anzeigedauer = 20
-stand = 1
+anzeigedauer = 25
+stand = 2
 
 # STUBN MC Clubhaus – Komm vorbei!
 plakat01
