@@ -1,0 +1,11 @@
+# Ostfriesen-Stübchen – Veranstaltungsplakate
+# Jede Zeile mit einer Plakatnummer wird angezeigt – in dieser Reihenfolge.
+# Zeile löschen oder mit # beginnen = Plakat wird nicht mehr gezeigt.
+# Erlaubt sind plakat01 bis plakat20 (Dateien plakat01.jpg … plakat20.jpg).
+# Nach jeder Änderung die Zahl bei 'stand' um 1 erhöhen.
+
+anzeigedauer = 20
+stand = 1
+
+# STUBN MC Clubhaus – Komm vorbei!
+plakat01
