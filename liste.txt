@@ -9,3 +9,4 @@ stand = 1
 
 # STUBN MC Clubhaus – Komm vorbei!
 plakat01
+plakat02
