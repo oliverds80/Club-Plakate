@@ -16,6 +16,8 @@ WETTER_URL = "https://api.brightsky.dev/current_weather?lat=53.502&lon=7.098"
 M2 = 12.4206012 * 3600.0          # mittlere Tidenperiode in Sekunden
 MTHW, MTNW = 650.0, 346.0          # Kennwerte Knock (cm am Pegel, 2010–2020)
 AUS = os.environ.get("AUSGABE", "public/greetsiel.json")
+# DWD kürzt Stationsnamen auf 20 Zeichen
+NAMEN = {"Norden-Leybuchtpolde": "Norden-Leybuchtpolder"}
 
 
 def laden(url, datei_env):
@@ -129,7 +131,7 @@ def wetter(daten):
     else:
         z = 0
     return {
-        "station": st.get("station_name", ""),
+        "station": NAMEN.get(st.get("station_name", ""), st.get("station_name", "")),
         "station_abstand_m": st.get("distance"),
         "messzeit": int(zeit(w["timestamp"])),
         "zustand": z,
