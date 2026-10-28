@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Greetsiel-Daten</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1rem;color:#1d2a38;background:#f6f4ef}code{background:#e8e4da;padding:0 .3em}pre{background:#fff;padding:1rem;overflow:auto}</style>
+</head><body>
+<h1>Greetsiel-Daten für das Ostfriesen-Stübchen</h1>
+<p>Zwischenspeicher für die VRChat-Welt: <a href="greetsiel.json"><code>greetsiel.json</code></a>, alle 15 Minuten neu.</p>
+<pre id="d">lädt …</pre>
+<p>Quellen: Wasserstand WSV, PEGELONLINE (Pegel Knock, Ems). Wetter: Deutscher Wetterdienst (Station Norden-Leybuchtpolder, ersatzweise Emden/Norderney), abgerufen über Bright Sky.</p>
+<script>fetch('greetsiel.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{const f=t=>new Date(t*1000).toLocaleString('de-DE');const t=j.tide||{},w=j.wetter||{};document.getElementById('d').textContent=
+`Erstellt: ${f(j.erstellt)}\n\nPegel Knock: ${t.wasserstand_cm} cm (${t.steigt?'steigt':'fällt'}), Messung ${f(t.messzeit)}\nNächstes Hochwasser: ${f(t.naechstes_hw)}\nNächstes Niedrigwasser: ${f(t.naechstes_nw)}\n\nWetter (${w.station}): ${w.zustand_name}, ${w.temperatur_c} °C, Wolken ${w.wolken_prozent} %, Regen ${w.regen_mm_h} mm/h, Wind ${w.wind_kmh} km/h (Böen ${w.boe_kmh})\nFehler: ${(j.fehler||[]).join('; ')||'keine'}`}).catch(e=>{document.getElementById('d').textContent='Fehler: '+e})</script>
+</body></html>
