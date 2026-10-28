@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "7,22,37,52 * * * *"   # alle 15 Minuten (GitHub startet geplante Läufe oft einige Minuten später)
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - greetsiel/holen.py
+      - .github/workflows/greetsiel-daten.yml
 
 permissions:
   contents: write
