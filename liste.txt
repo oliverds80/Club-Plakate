@@ -5,8 +5,11 @@
 # Nach jeder Änderung die Zahl bei 'stand' um 1 erhöhen.
 
 anzeigedauer = 25
-stand = 2
+stand = 3
 
 # STUBN MC Clubhaus – Komm vorbei!
 plakat01
 plakat02
+
+# WFS-Universum (wolffchen.de)
+plakat03
